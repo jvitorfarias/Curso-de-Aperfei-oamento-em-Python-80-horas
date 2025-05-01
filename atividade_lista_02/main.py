@@ -8,26 +8,38 @@ notas = []
 
 try:
     while True:
-        nota_inserida = float(input("Informe a nota do aluno:").replace(",","."))
+        nota_inserida = float(input("Informe a nota do aluno:").replace(",", "."))
 
         if nota_inserida >= 0 and nota_inserida <= 10:
             notas.append(nota_inserida)
-            continue
+            print("Nota inserida com sucesso!")
+            while True:
+                continuar = input("Deseja inserir uma nova nota? (s/n)")
+                if continuar == "s" or continuar == "n":
+                    os.system("cls")
+                    break
+                else:
+                    print("Opção inválida")
+                    continue
+            match continuar:
+                case "s":
+                    continue
+                case "n":
+                    break
         else: 
             print("Nota inválida, informe um valor entre 0 e 10.")
             continue
-        
-    while True:
-        media = sum(notas) / len(notas)
-        match media:
-            case _ if media >= 7:
-                print(f"Aluno aprovado com média {media:.2f}.")
-            case _ if media >= 5 and media < 7:
-                print(f"Aluno de recuperação com média {media:.2f}.")
-            case _ if media < 5:
-                print(f"Aluno reprovado com média {media:.2f}.")
-            case _:
-                print("Erro ao calcular a média.")
-            
+    for i in range(len(notas)):
+        print(f"Nota: {notas[i]}")
+
+    media = sum(notas)/len(notas)
 except Exception as e:
-    print("Tente novamente.")
+    print(f"Não foi possível inserir as notas e calcular a média. {e}")
+finally:
+    print(f"Média das notas: {media:,.2f}.")
+    if media >= 7:
+        print("O aluno está aprovado!")
+    elif media >= 5:
+        print("O aluno está de recuperação!")
+    else:
+        print("O aluno está reprovado!")
