@@ -29,8 +29,8 @@ try:
             continue
         elif continuar == 'n':
             print(dados)
-            calculo_imc = dados['peso'] / (dados ['altura'] * dados ['altura']).round(2)
-            print(f"Seu IMC é: {calculo_imc}")
+            calculo_imc = dados['peso'] / (dados ['altura'] * dados ['altura'])
+            print(f"Seu IMC é: {calculo_imc:,.2f} ")
             break
         else:
             print("Opção inválida.")
@@ -38,16 +38,16 @@ try:
         calculo_imc = dados['peso'] / (dados ['altura'] * dados ['altura'])
         if calculo_imc < 18.5:
             print("Procure um nutricionista, você está abaixo do peso ideal.")
-        elif calculo_imc > 18.5 and calculo_imc < 24.9:
+        elif calculo_imc >= 18.5 and calculo_imc < 24.9:
             print("Parabéns, você está no peso ideal.")
-        elif calculo_imc > 24.9 and calculo_imc <29.9:
+        elif calculo_imc >= 24.9 and calculo_imc <29.9:
             print("Cuidado, você está acima do peso ideal.")
-        elif calculo_imc > 29.9 and calculo_imc < 34.9:
+        elif calculo_imc >= 29.9 and calculo_imc < 34.9:
             print("Faça exercícios físicos e uma dieta, você está com obesidade grau 1.")
-        elif calculo_imc > 34.9 and calculo_imc < 39.9:
+        elif calculo_imc >= 34.9 and calculo_imc < 39.9:
             print("Procure um médico, você está com obesidade grau 2.")
         else:
-            print("Procure um médico, você está com obesidade grau 3.")
+            print("Procure um médico, você está com obesidade mórbida ou grau 3.")
 
 except Exception as e:
     print(f"Não foi possível inserir a nova chave {e}")
