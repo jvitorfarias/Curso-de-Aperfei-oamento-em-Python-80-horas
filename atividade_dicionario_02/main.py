@@ -86,8 +86,8 @@ try:
                     print("Não foi possível excluir a pessoa.")
                 continue
             case '5':
-                os.system('cls')
                 # Sair do programa
+                os.system('cls')
                 print("Saindo do programa... Até a próxima!")
                 break   
             case _:
