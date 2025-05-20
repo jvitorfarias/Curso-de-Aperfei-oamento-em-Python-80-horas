@@ -8,6 +8,7 @@
 import time
 import equacao as eq
 
+
 try:
     opcao = input("Escolha uma das opções: \n1 - Calcular Equação do 1º grau\n2 - Calcular Equação do 2º grau\n3 - Sair do programa\n")
 
