@@ -1,3 +1,5 @@
+# Comentário para testar o programa atividade_automacao_01 completo.
+
 import os
 
 chaves = ("nome", "idade", "cpf", "telefone", "email", "profissão")
